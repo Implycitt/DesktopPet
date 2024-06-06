@@ -10,22 +10,30 @@ class Pets():
     def __init__(self):
         self.name = 'cat'
         self.state = 0 
-        self.index = 0
-        self.animation = self.get_animations()
+        #self.index = 0
+        self.getAnimations()
         self.image = self.animation[self.state]
 
-    def get_animations(self):
+    def getAnimations(self):
         directory = self.dir + self.name
         for file in os.listdir(directory):
             self.animation.append(os.path.join(directory, file))
 
-        return self.animation
+    def getGif(self, index):
+        return self.animation[index]
 
-    def get_frame(self):
-        frame = self.animation[self.index]
+    def getFrames(self, image):
+        with Image.open(image) as gif:
+            index = 0
+            frames = []
+            while True:
+                try:
+                    gif.seek(index)
+                    frame = ImageTk.PhotoImage(gif)
+                    frames.append(frame)
+                except EOFError:
+                    break
+                index += 1
 
-        self.index += 1
-        if self.index == len(self.animation):
-            self.index = 0
+            return frames
 
-        return ImageTk.PhotoImage(Image.open(frame))
