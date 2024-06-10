@@ -3,6 +3,7 @@ import random, pyautogui
 import tkinter as tk
 from PIL import ImageTk, Image
 from win32api import GetMonitorInfo, MonitorFromPoint 
+from tktooltip import ToolTip
 
 import pets
 
@@ -17,10 +18,11 @@ class Window(tk.Tk):
         super().__init__()
 
         self.pet = pets.Pets()
-        self.pet.setXPos(int(self.width*0.8))
+        self.pet.setXPos(random.randrange(int(self.width*0.7), self.width-100))
         self.pet.setYPos(self.height-100)
 
         self.label = tk.Label(self, bd=0, bg='black')
+        ToolTip(self.label, msg=f"{self.pet.name}")
         self.eventNumber = random.randint(1, 3)
         self.iFrame = 0
 
@@ -94,4 +96,5 @@ class Window(tk.Tk):
             self.iFrame += 1
 
         return self.iFrame, self.eventNumber
+
 

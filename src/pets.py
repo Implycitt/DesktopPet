@@ -13,7 +13,7 @@ class Pets():
 
     def __init__(self):
         self.dirName = 'cat'
-        self.name = ""
+        self.name = "KITTY CAT"
 
         self.animation = []
         self.getGifs()
