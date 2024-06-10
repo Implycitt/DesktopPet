@@ -2,49 +2,96 @@ import random, pyautogui
 
 import tkinter as tk
 from PIL import ImageTk, Image
+from win32api import GetMonitorInfo, MonitorFromPoint 
 
 import pets
 
 class Window(tk.Tk):
 
+    monitor = GetMonitorInfo(MonitorFromPoint((0, 0)))
+    area = monitor.get('Work')
+    width = area[2]
+    height = area[3]
+
     def __init__(self):
         super().__init__()
 
         self.pet = pets.Pets()
+        self.pet.setXPos(int(self.width*0.8))
+        self.pet.setYPos(self.height-100)
+
+        self.label = tk.Label(self, bd=0, bg='black')
+        self.eventNumber = random.randint(1, 3)
+        self.iFrame = 0
 
         self.config(highlightbackground='black')
         self.overrideredirect(True)
+        self.attributes('-topmost', True)
         self.wm_attributes('-transparentcolor', 'black')
-        self.createWidget()
+        self.label.pack()
 
-        self.mainloop()
+        self.after(1, self.update, self.iFrame, self.pet.state, self.eventNumber, self.pet.xPos)
 
-    def createWidget(self):
-        frames = self.getImage()
-        self.gifLabel = tk.Label(self, bd=0)
-        self.playGif(self.gifLabel, frames)
+        self.mainloop()    
 
-    def playGif(self, label, frames):
 
-        for i in range(self.pet.cycles):
-            totalDelay = 50
-            delayFrames = 100
+    def event(self, iFrame, state, eventNumber, x):
+        
+        time = 100
 
-            for frame in frames:
-                self.after(totalDelay, self.nextFrame, frame, label, frames)
-                totalDelay += delayFrames
+        if self.eventNumber in self.pet.idle:
+            time = 400
+            self.pet.setState(0) 
+        elif self.eventNumber == 12:
+            self.pet.setState(1) 
+        elif self.eventNumber in self.pet.sleep:
+            time = 400
+            self.pet.setState(2) 
+        elif self.eventNumber == 26:
+            self.pet.setState(3) 
+        elif self.eventNumber in self.pet.walkLeft:
+            self.pet.setState(4) 
+        elif self.eventNumber in self.pet.walkRight:
+            self.pet.setState(5) 
 
-            self.after(totalDelay, self.nextFrame, frame, label, frames, True)
+        self.after(time, self.update, self.iFrame, self.pet.state, self.eventNumber, self.pet.xPos)
 
-    def nextFrame(self, frame, label, frames, restart=False):
+    def update(self, iFrame, state, eventNumber, x):
 
-        if restart:
-            self.after(1000, self.playGif, label, frames)
-            return
+        self.frame = self.pet.animations[self.pet.state][self.iFrame]
+        a = 0
+        b = 0
 
-        label.config(image=frame)
-        label.pack()
+        s = self.pet.state
+        if s == 0:
+            a, b = 1, 18
+        elif s == 1:
+            a, b = 19, 19
+        elif s == 2:
+            a, b = 19, 26 
+        elif s == 3: 
+            a, b = 1, 1
+        elif s == 4: 
+            a, b = 1, 18
+            self.pet.xPos -= 3
+        elif s == 5: 
+            a, b = 1, 18
+            self.pet.xPos += 3
 
-    def getImage(self):
-        frames = self.pet.getFrames(self.pet.getGif())
-        return frames
+        self.iFrame, self.eventNumber = self.animate(self.iFrame, self.pet.animations[self.pet.state], self.eventNumber, a, b)
+
+        self.geometry(f"100x100+{self.pet.xPos}+{self.pet.yPos}")
+        self.label.configure(image=self.frame)
+        self.after(1, self.event, self.iFrame, self.pet.state, self.eventNumber, self.pet.xPos)
+
+
+    def animate(self, iFrame, frames, eventNumber, a, b):
+
+        if self.iFrame == len(frames)-1:
+            self.iFrame = 0
+            self.eventNumber = random.randint(a, b)
+        else:
+            self.iFrame += 1
+
+        return self.iFrame, self.eventNumber
+

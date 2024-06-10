@@ -6,32 +6,42 @@ class Pets():
 
     animation = []
     dir = '..\\assets\\'
+    idle =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    sleep = [19, 20, 21, 22, 23, 24, 25] 
+    walkLeft = [13, 14, 15]
+    walkRight = [16, 17, 18]
 
     def __init__(self):
-        self.name = 'cat'
-        self.getAnimations()
+        self.dirName = 'cat'
+        self.name = ""
+
+        self.animation = []
+        self.getGifs()
+        self.animations = {}
         self.state = 0 
         self.cycles = 0 
-        self.getCycles()
-        self.image = self.animation[self.state]
+        self.xPos = 0
+        self.yPos = 0
+
+        self.getAnimations()
+
+    def setXPos(self, x):
+        self.xPos = x
+
+    def setYPos(self, y):
+        self.yPos = y
 
     def getAnimations(self):
-        directory = self.dir + self.name
+        for num, i in enumerate(self.animation):
+            self.animations[num] = self.getFrames(i)
+
+    def getGifs(self):
+        directory = self.dir + self.dirName
         for file in os.listdir(directory):
             self.animation.append(os.path.join(directory, file))
 
-    def getGif(self):
-        return self.animation[self.state]
-
-    def getCycles(self):
-        name = self.getGif() 
-        if 'to' in name:
-            self.cycles = 1
-        else:
-            self.cycles = random.randint(1, 5)
-
-    def newState(self):
-        self.state = random.randint(0, len(self.animation)-1)
+    def getGif(self, i):
+        return self.animation[i]
 
     def getFrames(self, image):
         with Image.open(image) as gif:
@@ -47,4 +57,7 @@ class Pets():
                 index += 1
 
             return frames
+
+    def setState(self, s):
+        self.state = s
 
