@@ -73,10 +73,10 @@ class Window(tk.Tk):
             a, b = 19, 26 
         elif s == 3: 
             a, b = 1, 1
-        elif s == 4: 
+        elif s == 4 and self.pet.xPos > 0: 
             a, b = 1, 18
             self.pet.xPos -= 3
-        elif s == 5: 
+        elif s == 5 and self.pet.xPos < (self.width-100): 
             a, b = 1, 18
             self.pet.xPos += 3
 

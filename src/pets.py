@@ -14,6 +14,7 @@ class Pets():
     def __init__(self):
         self.dirName = 'cat'
         self.name = "KITTY CAT"
+        self.types = [file for file in os.listdir(self.dir)]
 
         self.animation = []
         self.getGifs()
