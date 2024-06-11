@@ -97,4 +97,6 @@ class Window(tk.Tk):
 
         return self.iFrame, self.eventNumber
 
+    def kill(self):
+        self.destroy()
 

@@ -12,7 +12,7 @@ class Pets():
     walkRight = [16, 17, 18]
 
     def __init__(self):
-        self.dirName = 'cat'
+        self.dirName = 'jackie'
         self.name = "KITTY CAT"
         self.types = [file for file in os.listdir(self.dir)]
 
