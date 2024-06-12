@@ -54,14 +54,14 @@
 Small little kitty cat
 
 Project was originally inspired from [this youtube video](https://www.youtube.com/watch?v=x8BO9C6YtlE&t=315s)\
-[This article](https://medium.com/analytics-vidhya/create-your-own-desktop-pet-with-python-5b369be18868) was also helpful when creating the script\
+[This article](https://medium.com/analytics-vidhya/create-your-own-desktop-pet-with-python-5b369be18868) was helpful when creating the script\
 Also found [this video](https://www.youtube.com/watch?v=E6My4nxW2_k) where someone more talented than I am made a better version in Godot  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [![Python][Python]][Python-url]
+[![Python][Python]][Python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,7 +83,7 @@ Conversely clicking on the run script will start the program as well
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## In action
 
 [![DesktopPet][product-gif]]()
 
