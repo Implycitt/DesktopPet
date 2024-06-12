@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![DesktopPet](product-screenshot)
+[![DesktopPet][product-screenshot]]()
 
 Small little kitty cat
 
@@ -57,7 +57,7 @@ Small little kitty cat
 
 ### Built With
 
-* [![Python][Next.js]][Next-url]
+* [![Python][Python]][Python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +81,7 @@ Conversely clicking on the run script will start the program as well
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![DesktopPet](product-gif)
+[![DesktopPet][product-gif]]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
