@@ -1,1 +1,1 @@
-python main.py
+start dist/main.exe
