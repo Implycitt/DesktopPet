@@ -37,15 +37,11 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -53,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![DesktopPet][product-screenshot]]
+![DesktopPet](product-screenshot)
 
 Small little kitty cat
 
@@ -67,10 +63,6 @@ Small little kitty cat
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 
 ### Installation
 
@@ -89,9 +81,7 @@ Conversely clicking on the run script will start the program as well
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+![DesktopPet](product-gif)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,5 +113,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-shield]: https://img.shields.io/github/license/Implycitt/DesktopPet.svg?style=for-the-badge
 [license-url]: https://github.com/Implycitt/DesktopPet/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
+[product-gif]: images/example.gif
 [Python]: https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white
 [python-url]: https://python.org/
