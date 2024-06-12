@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 from win32api import GetMonitorInfo, MonitorFromPoint 
 from tktooltip import ToolTip
 
-import pets
+from src import pets
 
 class Window(tk.Tk):
 

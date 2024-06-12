@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 class Pets():
 
     animation = []
-    dir = '..\\assets\\'
+    dir = 'assets\\'
     idle =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     sleep = [19, 20, 21, 22, 23, 24, 25] 
     walkLeft = [13, 14, 15]
