@@ -18,7 +18,8 @@ class Window(tk.Tk):
         super().__init__()
 
         self.pet = pets.Pets()
-        self.pet.setXPos(random.randrange(int(self.width*0.7), self.width-100))
+        self.pet.getAnimations()
+        self.pet.setXPos(random.randrange(int(self.width*0.7), self.width))
         self.pet.setYPos(self.height-100)
 
         self.label = tk.Label(self, bd=0, bg='black')
@@ -96,7 +97,4 @@ class Window(tk.Tk):
             self.iFrame += 1
 
         return self.iFrame, self.eventNumber
-
-    def kill(self):
-        self.destroy()
 

@@ -13,7 +13,7 @@ class Pets():
 
     def __init__(self):
         self.dirName = 'jackie'
-        self.name = "KITTY CAT"
+        self.name = "Jackie"
         self.types = [file for file in os.listdir(self.dir)]
 
         self.animation = []
@@ -23,8 +23,6 @@ class Pets():
         self.cycles = 0 
         self.xPos = 0
         self.yPos = 0
-
-        self.getAnimations()
 
     def setXPos(self, x):
         self.xPos = x
