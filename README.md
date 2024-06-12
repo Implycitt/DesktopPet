@@ -53,6 +53,9 @@
 
 Small little kitty cat
 
+Project was inspired originally from [this youtube video] (https://www.youtube.com/watch?v=x8BO9C6YtlE&t=315s)
+[This article] (https://medium.com/analytics-vidhya/create-your-own-desktop-pet-with-python-5b369be18868) was also helpful when creating the script
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
