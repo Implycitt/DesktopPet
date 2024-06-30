@@ -78,7 +78,7 @@ Also found [this video](https://www.youtube.com/watch?v=E6My4nxW2_k) where someo
    ```sh
    ./run.bat
    ```
-Conversely clicking on the run script will start the program as well 
+Similarly clicking on the run script will start the program as well 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
